@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { ListComponent } from './list/list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [RouterOutlet, RouterLink, ListComponent],
+  template: `
+  <nav><a routerLink="/welcome">Welcome</a> | <a routerLink="/artists">Artists</a></nav>  
+  <main>
+    <router-outlet />
+  </main>`,
+  styles: ''
 })
 export class AppComponent {
-  title = 'PROJ';
+  
 }
